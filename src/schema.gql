@@ -1,0 +1,51 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type InOutData {
+  id: String!
+  punchIn: String!
+  punchOut: String!
+}
+
+type EmployeeData {
+  id: String!
+  name: String!
+  mobNo: String!
+  address: String!
+  email: String!
+}
+
+type PunchInDto {
+  id: String!
+  punchIn: String!
+  punchOut: String!
+  employeeData: EmployeeData!
+}
+
+type Query {
+  showEmployee(id: String!): EmployeeData!
+  showAllEmp: [EmployeeData!]!
+}
+
+type Mutation {
+  createEmployee(data: CreateEmployee!): EmployeeData!
+  editEmployee(id: String!, data: EditEmployee!): EmployeeData!
+  deleteEmployee(id: String!): Boolean!
+  punchIn(id: String!): PunchInDto!
+  punchOut(id: String!): InOutData!
+}
+
+input CreateEmployee {
+  name: String!
+  mobNo: String!
+  address: String!
+  email: String!
+}
+
+input EditEmployee {
+  name: String!
+  mobNo: String!
+  address: String!
+  email: String!
+}
